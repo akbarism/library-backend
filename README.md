@@ -189,3 +189,25 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
  
 connection.end();
 ````
+## nodemon
+
+![b](https://img.shields.io/badge/npm%package-2.0.2-success) ![badge](https://img.shields.io/badge/build-failing-red) ![b](https://img.shields.io/badge/backers-121-success)
+
+nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+### how to install 
+```
+npm install --save-dev nodemon
+```
+## usage
+
+nodemon wraps your application, so you can pass all the arguments you would normally pass to your app:
+
+```nodemon [your node app]```
+
+For CLI options, use the -h (or --help) argument:
+
+```nodemon -h```
+
+Using nodemon is simple, if my application accepted a host and port as the arguments, I would start it as so:
+
+```nodemon ./server.js localhost 8080```
