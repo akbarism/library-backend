@@ -11,13 +11,13 @@
 # package
 
 * [**bycrypt**](#bcrypt)
-* [**body-parser**](body-parser)
-* [**cors**](cors)
-* [**dotenv**](dotenv)
-* [**eslint**](eslint)
-* [**express**](express)
-* [**mysql**](mysql)
-* [**nodemon**](nodemon)
+* [**body-parser**](#body-parser)
+* [**cors**](#cors)
+* [**dotenv**](#dotenv)
+* [**eslint**](#eslint)
+* [**express**](#express)
+* [**mysql**](#mysql)
+* [**nodemon**](#nodemon)
 # instalation package
 
 ## bcrypt
@@ -78,7 +78,7 @@ app.use(function (req, res) {
 ![b](https://img.shields.io/badge/npm-v2.8.5-blue) ![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Download-23M/month-success)
 
 CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-### how to install bcrypt
+### how to install 
 ```
 npm install cors
 ```
@@ -103,7 +103,7 @@ app.listen(80, function () {
 ![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/npm-v8.2.0-blue) ![badge](https://img.shields.io/badge/Code%20Style-Standard-brightgreen)
 
 Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
-how to install bcrypt
+## how to install 
 ```
 npm install dotenv
 ```
@@ -113,37 +113,79 @@ require('dotenv').config()
 ```
 ## eslint
 
-![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Dependencies-Up%20To%20date-success)
+![b](https://img.shields.io/badge/npm-v8.2.0-blue) ![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Download-23M/month-success)
 
-A library to help you hash passwords.
-how to install bcrypt
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code. In many ways
+## how to install 
 ```
-npm install eslint
+npm install eslint --save-dev
+```
+## configurtaion
+After running ``eslint --init``, you'll have a ```.eslintrc file``` in your directory. In it, you'll see some rules configured like this:
+```
+{
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
+    }
+}
 ```
 ## express
 
-![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Dependencies-Up%20To%20date-success)
+![b](https://img.shields.io/badge/npm-v8.2.0-blue) ![b](https://img.shields.io/badge/windows-Passing-brightgreen) ![b](https://img.shields.io/badge/linux-Passing-brightgreen) ![b](https://img.shields.io/badge/Download-23M/month-success)
 
-A library to help you hash passwords.
-how to install bcrypt
+Fast, unopinionated, minimalist web framework for node.
+## how to install 
 ```
 npm install espress
 ```
+## export
+```
+const express = require('express')
+const app = express()
+ 
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+ 
+app.listen(3000)
+```
 ## morgan
 
-![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Dependencies-Up%20To%20date-success)
+![b](https://img.shields.io/badge/npm-v8.2.0-blue) ![b](https://img.shields.io/badge/windows-Passing-brightgreen) ![b](https://img.shields.io/badge/Download-23M/month-success)
 
-A library to help you hash passwords.
-how to install bcrypt
+HTTP request logger middleware for node.js
+## how to install
 ```
 npm install morgan
 ```
+### API
+```
+var morgan = require('morgan')
+```
 ## mysql
 
-![b](https://img.shields.io/badge/Build-Passing-brightgreen) ![b](https://img.shields.io/badge/Dependencies-Up%20To%20date-success)
-
-A library to help you hash passwords.
-how to install bcrypt
+![b](https://img.shields.io/badge/npm-v8.2.0-blue) ![b](https://img.shields.io/badge/windows-success-brightgreen) ![b](https://img.shields.io/badge/Download-23M/month-success)
+## how to install 
 ```
 npm install mysql
 ```
+how to use it : 
+```
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'me',
+  password : 'secret',
+  database : 'my_db'
+});
+ 
+connection.connect();
+ 
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+ 
+connection.end();
+````
