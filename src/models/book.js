@@ -15,15 +15,15 @@ module.exports = {
                     }
                 });
             } else if (pagination) {
-                connection.query('SELECT * FROM book LIMIT ' + (pagination * 5 - 5) + ', 5', (err, result) => {
+                connection.query('SELECT * FROM book LIMIT ' + (pagination * 10 - 10) + ', 10', (err, result) => {
                     if (!err) {
-                        resolve([`curent page : ${pagination}`, `content per page : ${result.length}`, result]);
+                        resolve(result);
                     } else {
                         reject(new Error(err));
                     }
                 });
             } else if (sort) {
-                connection.query('SELECT * FROM book ORDER BY ' + sort + ' DESC', (err, result) => {
+                connection.query('SELECT * FROM book ORDER BY ' + sort + ' ASC', (err, result) => {
                     if (!err) {
                         resolve([`sort by : ${sort}`, `content perpage : ${result.length}`, result]);
                     } else {
@@ -34,7 +34,7 @@ module.exports = {
                 connection.query('SELECT book.*, categories.category_name FROM book INNER JOIN categories ON book.id_category = categories.id_category',
                     (err, result) => {
                         if (!err) {
-                            resolve([`curent page : ${pagination}`, `content per page : ${result.length}`, result]);
+                            resolve(result);
                         } else {
                             reject(new Error(err));
                         }
@@ -57,7 +57,7 @@ module.exports = {
     },
     insertBook: (data) => {
         return new Promise((resolve, reject) => {
-            connection.query('SELECT book.*, categories.category_name FROM book INNER JOIN categories ON book.id_category = categories.id_category SET ?',
+            connection.query('INSERT INTO book SET ?',
                 data, (err, result) => {
                     if (!err) {
                         resolve(result);
@@ -69,7 +69,7 @@ module.exports = {
     },
     updateBook: (data, idbook) => {
         return new Promise((resolve, reject) => {
-            connection.query('SELECT book.*, categories.category_name FROM book INNER JOIN categories ON book.id_category = categories.id_category SET ? WHERE id = ?',
+            connection.query('UPDATE book SET ? WHERE id_book = ?',
                 [data, idbook], (err, result) => {
                     if (!err) {
                         resolve(result);

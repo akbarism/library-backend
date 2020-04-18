@@ -44,15 +44,15 @@ module.exports = {
             .then((result) => {
                 res.send(result);
             })
-            .catch((err) => 
+            .catch((err) =>
                 console.log(err));
     },
-    deleteLoan: (req, res) =>{
+    deleteLoan: (req, res) => {
         const idLoan = req.params.id_loan;
         loanModel.deleteLoan(idLoan)
-            .then((result)=>{
+            .then((result) => {
                 res.send(result);
             })
-            .catch((err)=> console.log(err));
+            .catch((err) => console.log(err));
     }
 };

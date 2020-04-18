@@ -1,36 +1,35 @@
 const bookModel = require('../models/book');
 const MiscHelper = require('../helpers/helpers');
+// const conn = require('../configs/db');
+require('dotenv').config();
+// const redis = require('redis');
+// const client = redis.createClient(process.env.PORT_REDIS);
 module.exports = {
 
     getBooks: (req, res) => {
-        
+        var jumlah = 0;
+        bookModel.getBooks()
+            .then((resultBook) => {
+                jumlah = resultBook.length;
+            });
         const search = req.query.search;
         const sort = req.query.sort;
         const pagination = req.query.pagination;
         bookModel.getBooks(search, pagination, sort)
 
             .then((resultBook) => {
-                const jumlah = resultBook.length;
                 const result = resultBook;
-                console.log(resultBook.length);
-                console.log(result.length);
-                if (resultBook[2].length > 0) {
-                    MiscHelper.response(res, result, 200, false, jumlah);
-
-
-                } else {
-                    MiscHelper.response(res, result, 404, false, jumlah);
-                }
-
+                MiscHelper.response(res, result, 200, false, jumlah);
             })
+
+
             .catch((err) => console.log(err));
     },
     bookDetail: (req, res) => {
         const idBook = req.params.id_book;
         bookModel.bookDetail(idBook)
             .then((result) => {
-                // res.send(result)
-                // console.log(result)
+
                 MiscHelper.response(res, result, 200);
             })
             .catch((err) => console.log(err));
@@ -38,23 +37,22 @@ module.exports = {
     insertBook: (req, res) => {
         const {
             tittle,
-            description,
             author,
-            image,
+            // image,
             status,
-            id_category } = req.body;
+            id_category,
+            description
+        } = req.body;
         const data = {
             tittle,
-            description,
             author,
-            image,
+            image: `http://localhost:8000/uploads/${req.file.filename}`,
             status,
-            id_category
+            id_category,
+            description
         };
         bookModel.insertBook(data)
             .then((result) => {
-                // res.send(result)
-                // console.log(result)
                 MiscHelper.response(res, result, 200);
             })
             .catch((err) => console.log(err));
@@ -65,21 +63,20 @@ module.exports = {
             tittle,
             description,
             author,
-            image,
+
             status,
             id_category } = req.body;
         const data = {
             tittle,
             description,
             author,
-            image,
+
             status,
             id_category
         };
+        console.log(data);
         bookModel.updateBook(data, idbook)
             .then((result) => {
-                // res.send(result)
-                // console.log(result)
                 MiscHelper.response(res, result, 200, [idbook, data]);
             })
             .catch((err) => console.log(err));
