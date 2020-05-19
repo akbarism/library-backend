@@ -121,10 +121,11 @@ Fork the Project
 
 ## Contact
 
-My Email : sulfikardi25@gmail.com
+ Email : akbarismaiel@gmail.com
+ linkedin: https://www.linkedin.com/in/akbarism/
 
 Project Link: [Backend-book-library-expressjs](https://github.com/shoelfikar/Backend-book-library-expressjs)
 
 
 ---
-Copyright © 2020 [Sulfikardi](https://github.com/shoelfikar/)
+Copyright © 2020 [Akbar Ismail](https://github.com/akbarism/)
