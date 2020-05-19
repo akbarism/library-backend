@@ -34,7 +34,7 @@
 ### Clone
 ```
 $ git clone https://github.com/akbarism/library-backend.git
-$ cd Backend-book-library-expressjs
+$ Open the folder and type npm install for install dependencies
 $ npm install
 ```
 
