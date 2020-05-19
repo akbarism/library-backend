@@ -33,7 +33,7 @@
 ## Installation
 ### Clone
 ```
-$ git clone https://github.com/shoelfikar/Backend-book-library-expressjs.git
+$ git clone https://github.com/akbarism/library-backend.git
 $ cd Backend-book-library-expressjs
 $ npm install
 ```
@@ -116,15 +116,13 @@ Fork the Project
 
 ## Related Project
 
-* [`Frontend-mylibrary-online-vuejs`](https://github.com/shoelfikar/Frontend-mylibrary-online-vuejs)
-* [`Backend-book-library-expressjs`](https://github.com/shoelfikar/Backend-book-library-expressjs)
+* [`Frontend-mylibrary-online-vuejs`](https://github.com/akbarism/vue-library)
 
 ## Contact
 
- Email : akbarismaiel@gmail.com
- linkedin: https://www.linkedin.com/in/akbarism/
+ Email : akbarismaiel@gmail.com <br>
+ linkedin: [akbar ismail](https://www.linkedin.com/in/akbarism/)
 
-Project Link: [Backend-book-library-expressjs](https://github.com/shoelfikar/Backend-book-library-expressjs)
 
 
 ---
